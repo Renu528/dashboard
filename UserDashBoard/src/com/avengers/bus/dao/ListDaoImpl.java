@@ -17,6 +17,10 @@ public class ListDaoImpl implements ListsDao {
 	@PersistenceContext
 	private EntityManager em;
 
+	public void persist(User user) {
+		em.persist(user);
+	}
+
 	@Override
 	public List<User> UserList(int userId) {
 		// TODO Auto-generated method stub
@@ -25,23 +29,14 @@ public class ListDaoImpl implements ListsDao {
 		return query.getResultList();
 	}
 
-	// public User updateUser(User user) {
-	// return em.merge(user);
-	// }
-
-	// public void updateUser(User user) {
-	// this.em.persist(user);
-	// }
-
 	public User findById(long id) {
 		User user = (User) em.find(User.class, id);
 		return user;
 	}
 
 	@Transactional
-	public User updateUser(User user) {
+	public void updateUser(User user) {
 		em.merge(user);
-		return user;
 	}
 
 }

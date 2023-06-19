@@ -7,6 +7,6 @@ import com.avengers.bus.entityModels.User;
 public interface ListsDao {
 	public List<User> UserList(int userId);
 
-	public User updateUser(User user);
+	public void updateUser(User user);
 
 }

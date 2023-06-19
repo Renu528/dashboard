@@ -56,8 +56,12 @@
 	</beans:bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
-<!-- 
-	<beans:bean id="countdao" class="com.avengers.bus.dao.CountsDAOImpl" autowire="byName" /> -->
+ 
+	<!-- <beans:bean id="userdao" class="com.avengers.bus.dao.UserPassengersDaoImpl" autowire="byName" />
 	<beans:bean id="listdao" class="com.avengers.bus.dao.ListDaoImpl" autowire="byName" />
+	
+	<beans:bean id="fetchuser" class="com.avengers.bus.services.FetchUser" autowire="byName" />
+	<beans:bean id="fetchtickets" class="com.avengers.bus.services.FetchTicketsImpl" autowire="byName" /> -->
+	
 
 </beans:beans>

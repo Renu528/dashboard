@@ -1,27 +1,25 @@
 package com.avengers.bus.entityModels;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "btrs_user1")
+@Table(name = "btrs_users")
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int user_id;
-	String user_email;
-	String user_name;
-	String dob;
-	long mobile;
-	String address;
-	String passwords;
-
-	@Override
-	public String toString() {
-		return "User [user_id=" + user_id + ", user_email=" + user_email + ", user_name=" + user_name + ", Dob=" + dob
-				+ ", mobile=" + mobile + ", address=" + address + ", passwords=" + passwords + "]";
-	}
+	String email;
+	String password;
+	String full_name;
+	int age;
+	String gender;
+	double cashback;
+	double wallet;
 
 	public int getUser_id() {
 		return user_id;
@@ -31,52 +29,66 @@ public class User {
 		this.user_id = user_id;
 	}
 
-	public String getUser_email() {
-		return user_email;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getdob() {
-		return dob;
+	public String getFull_name() {
+		return full_name;
 	}
 
-	public void setDob(String dob) {
-		dob = dob;
+	public void setFull_name(String full_name) {
+		this.full_name = full_name;
 	}
 
-	public long getMobile() {
-		return mobile;
+	public int getAge() {
+		return age;
 	}
 
-	public void setMobile(int mobile) {
-		this.mobile = mobile;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public String getPasswords() {
-		return passwords;
+	public double getCashback() {
+		return cashback;
 	}
 
-	public void setPasswords(String passwords) {
-		this.passwords = passwords;
+	public void setCashback(double cashback) {
+		this.cashback = cashback;
+	}
+
+	public double getWallet() {
+		return wallet;
+	}
+
+	public void setWallet(double wallet) {
+		this.wallet = wallet;
+	}
+
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", email=" + email + ", password=" + password + ", full_name=" + full_name
+				+ ", age=" + age + ", gender=" + gender + ", cashback=" + cashback + ", wallet=" + wallet + "]";
 	}
 
 }
